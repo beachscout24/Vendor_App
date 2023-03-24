@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Add A Vendor</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+    <div th:insert="~{includes/nav}"></div>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Add a Vendor</h1>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container">
+            <form th:action="@{postVendor}" method="POST">
+            <div class="mb-3">
+                <label for="name" class="col-sm-2 col-form-label-lg">Name:</label>
+                <div><input name="name" id="name" placeholder="Name..." class="form-control form-control-lg" /></div>
+                <span th:if="${errors != null && errors.containsKey('name')}" th:text="${errors.get('name')}"></span>
+            </div>
+                <div class="mb-3">
+                    <label for="address" class="col-sm-2 col-form-label-lg">Address:</label>
+                    <div><input name="address" id="address" placeholder="Address..." class="form-control form-control-lg" /></div>
+                    <span th:if="${errors != null && errors.containsKey('address')}" th:text="${errors.get('address')}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="col-sm-2 col-form-label-lg">City:</label>
+                    <div><input name="city" id="city" placeholder="City..." class="form-control form-control-lg" /></div>
+                    <span th:if="${errors != null && errors.containsKey('city')}" th:text="${errors.get('city')}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="state" class="col-sm-2 col-form-label-lg">State:</label>
+                    <div><input name="state" id="state" placeholder="State..." class="form-control form-control-lg" maxlength="2"/></div>
+                    <span th:if="${errors != null && errors.containsKey('state')}" th:text="${errors.get('state')}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="zipCode" class="col-sm-2 col-form-label-lg">ZipCode:</label>
+                    <div><input name="zipCode" id="zipCode" placeholder="ZipCode..." class="form-control form-control-lg" /></div>
+                    <span th:if="${errors != null && errors.containsKey('zipCode')}" th:text="${errors.get('zipCode')}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="col-sm-2 col-form-label-lg">PhoneNumber:</label>
+                    <div><input name="phoneNumber" id="phoneNumber" placeholder="PhoneNumber..." class="form-control form-control-lg" /></div>
+                    <span th:if="${errors != null && errors.containsKey('phoneNumber')}" th:text="${errors.get('phoneNumber')}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="col-sm-2 col-form-label-lg">Email:</label>
+                    <div><input name="email" id="email" placeholder="Email..." class="form-control form-control-lg" /></div>
+                    <span th:if="${errors != null && errors.containsKey('email')}" th:text="${errors.get('email')}"></span>
+                </div>
+                <div class="mb-3">
+                    <div class="col-sm"><button type="submit" class="btn btn-primary">Add a Vendor</button></div>
+                </div>
+            </form>
+            </div>
+        </section>
+        <div th:insert="~{includes/footer}"></div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
