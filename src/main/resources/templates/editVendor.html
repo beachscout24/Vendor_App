@@ -51,7 +51,7 @@
                 <div class="mb-3">
                     <label for="zipCode" class="col-sm-2 col-form-label-lg">ZipCode:</label>
                     <div><input name="zipCode" id="zipCode" placeholder="ZipCode..." class="form-control form-control-lg" th:value="${vendor.zipCode}"/></div>
-                    <span th:if="${errors != null && errors.containsKey('zipCode')}" th:text="${errors.get('zipCode')}"></span>
+                    <span th:if="${errors != null && errors.containsKey('zipCode')}" th:text="${errors.get('zipCode')}" id="zipCodeError" class="span-class"></span>
                 </div>
                 <div class="mb-3">
                     <label for="phoneNumber" class="col-sm-2 col-form-label-lg">PhoneNumber:</label>
@@ -64,7 +64,7 @@
                     <span th:if="${errors != null && errors.containsKey('email')}" th:text="${errors.get('email')}"></span>
                 </div>
                 <div class="mb-3">
-                    <div class="col-sm"><button type="submit" class="btn btn-primary">Edit Vendor</button></div>
+                    <div class="col-sm"><button name="editVendor" type="submit" class="btn btn-primary">Edit Vendor</button></div>
                 </div>
             </form>
             </div>

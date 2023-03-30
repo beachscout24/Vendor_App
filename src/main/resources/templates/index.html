@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <form th:action="@{add-a-vendor}">
-                        <button class="btn btn-info">Add a vendor</button>
+                        <button name="AddaVendor" class="btn btn-info">Add a vendor</button>
                     </form>
                 </div>
                 <div>
@@ -60,10 +60,10 @@
                                 <td th:text="${vendor.phoneNumber}"></td>
                                 <td th:text="${vendor.email}"></td>
                                 <td>
-                                    <a class="btn btn-primary" th:href="@{editVendor(id=${vendor.id})}" role="button">Edit Vendor</a>
+                                    <a name="editAVendor" class="btn btn-primary" th:href="@{editVendor(id=${vendor.id})}" role="button" id="editVendors">Edit Vendor</a>
                                 </td>
                                 <td>
-                                    <a class="btn btn-primary" th:href="@{deleteVendor(id=${vendor.id})}" role="button">Delete Vendor</a>
+                                    <a name="deleteVendor" class="btn btn-primary" th:href="@{deleteVendor(id=${vendor.id})}" role="button" id="deleteVendors">Delete Vendor</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -71,8 +71,8 @@
                     </div>
                     <div>
                         <span th:each="page:${pages}">
-                            <span th:if="${page} == ${pageNumber}"><a th:text="${page + 1}" class="btn btn-primary" role="button"></a></span>
-                            <span th:if="${page} != ${pageNumber}"><a th:href="@{/(page=${page}, size=${size})}" th:text="${page + 1}" class="btn btn-secondary" role="button"></a></span>
+                            <span th:if="${page} == ${pageNumber}"><a th:text="${page + 1}" class="btn btn-primary" role="button" id="current-page" ></a></span>
+                            <span th:if="${page} != ${pageNumber}"><a th:href="@{/(page=${page}, size=${size})}" th:text="${page + 1}" class="btn btn-secondary" role="button" id="page"></a></span>
                         </span>
                     </div>
                 </div>
